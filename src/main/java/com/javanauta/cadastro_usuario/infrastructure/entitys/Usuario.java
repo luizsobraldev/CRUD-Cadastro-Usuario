@@ -1,0 +1,28 @@
+package com.javanauta.cadastro_usuario.infrastructure.entitys;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "Usuario")
+@Entity
+
+public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) /* fala que o id sera gerado automaticamento */
+    private Integer id;
+
+    @Column(name = "email", unique = true)
+    private String email;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "telefone", unique = true)
+    private String telefone;
+}
